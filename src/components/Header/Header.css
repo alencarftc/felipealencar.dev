@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0 0;
+}
+.header__logo {
+  max-width: 180px;
+  width: unset;
+}
+.header__nav,
+.header__nav-list {
+  width: 100%;
+  display: inherit;
+  flex-flow: inherit;
+}
+.header__nav {
+  max-width: 600px;
+}
+.header__nav-list {
+  justify-content: space-between;
+  align-items: center;
+}
+.header__nav-item {
+  color: #d81159;
+}
+.header__nav-item a {
+  font-family: "Hammersmith One", sans-serif;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+}
+.header__nav-item button .header__nav-link {
+  color: var(--main-background-color);
+}
+.header__color-toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 110px;
+  cursor: pointer;
+  filter: brightness(0.6);
+  transition: right 120ms ease, top 120ms ease, filter 120ms ease;
+}
+.header__color-toggler:hover {
+  filter: brightness(1);
+}
+@media screen and (max-width: 1024px) {
+  .header__nav-item {
+    display: none;
+  }
+}

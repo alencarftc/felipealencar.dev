@@ -1,0 +1,123 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  color-scheme: light dark; /* both supported */
+  --text-font-family: "Mulish";
+  --heading-font-family: "Hammersmith One";
+}
+:root,
+html[data-theme="light"] {
+  --red: #d81159;
+  --white: #f5f5f5;
+  --white-grayish: #e1eff6;
+  --black: #2e2836;
+
+  --main-background-color: var(--white-grayish);
+  --main-heading-color: var(--black);
+  --alt-background-color: var(--red);
+  --alt-heading-color: var(--white-grayish);
+  --input-background-color: var(--white);
+  --input-stroke-color: var(--white-grayish);
+  --input-placeholder-color: #2f2e414d;
+  --text-color: var(--black);
+
+  --projects-title-color: var(--white-grayish);
+}
+:root[data-theme="dark"] {
+  --red: #d81159bf;
+  --white: #f5f5f5;
+  --white-grayish: #e1eff6bf;
+  --dark-purple: #1c2039;
+  --purple-gray: #252c47;
+  --purple: #3d348bbf;
+
+  --contrast-color: var(--red);
+  --main-background-color: var(--dark-purple);
+  --main-heading-color: var(--red);
+  --alt-background-color: var(--purple-gray);
+  --alt-heading-color: var(--white-grayish);
+  --input-background-color: var(--purple-gray);
+  --input-stroke-color: var(--purple);
+  --input-placeholder-color: #e1eff64d;
+  --text-color: var(--white-grayish);
+
+  --projects-title-color: var(--red);
+}
+
+html {
+  font-size: 62.5%;
+  background: var(--main-background-color);
+  color: var(--heading-color);
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: -apple-system, BlinkMacSystemFont, var(--text-font-family),
+    var(--heading-font-family), "Oxygen", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  font-size: 62.5%;
+  font-weight: 400;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1230px;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: 22rem 0;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: inherit;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+section {
+  width: 100%;
+}
+section:not(:first-child):not(:nth-child(n-1)):not(:last-child) {
+  padding: 12rem 0;
+}
+section h2 {
+  font-size: 7.6rem;
+  color: var(--heading-color);
+  width: 100%;
+}
+
+@media screen and (max-width: 1080px) {
+  .row {
+    flex-flow: row wrap !important;
+  }
+}
+
+a:-webkit-any-link {
+  color: var(--contrast-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font-family), sans-serif;
+}
