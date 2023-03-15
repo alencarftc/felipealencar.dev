@@ -34,12 +34,13 @@
   color: var(--main-background-color);
 }
 .header__color-toggler {
+  display: inline-block;
   position: absolute;
   top: 0;
   right: 0;
   width: 110px;
   cursor: pointer;
-  filter: brightness(0.6);
+  filter: brightness(0.7);
   transition: right 120ms ease, top 120ms ease, filter 120ms ease;
 }
 .header__color-toggler:hover {

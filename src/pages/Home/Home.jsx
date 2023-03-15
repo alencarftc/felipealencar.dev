@@ -1,27 +1,36 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import Header from "@components/Header";
 import Button from "@components/Button";
 import ArrowButton from "@components/ArrowButton";
-import FelipeImage from "@images/felipe.png";
-import LightContactImage from "@images/light-contact.svg";
-import DarkContactImage from "@images/dark-contact.svg";
+import FelipeImage from "@images/_felipe.png";
+import { ReactComponent as AuthorBackground } from "@images/author_stroke_bg.svg";
+import { ReactComponent as LightContactImage } from "@images/contact__light.svg";
+import { ReactComponent as DarkContactImage } from "@images/contact__dark.svg";
 import { LINKS } from "@configs/links";
 
 import "./Home.css";
 import { ColorContext } from "@providers/ColorContext";
 
 const Home = () => {
-  const { colorMode, handleOnColorChange } = useContext(ColorContext);
+  const [menuOpen, setMenuOpen] = useState();
+  const { colorMode } = useContext(ColorContext);
 
   return (
     <>
       <section id="inicio" className="landing container">
-        <Header />
+        <Header isOpen={menuOpen} />
         <div className="landing__cta">
           <h2 className="title landing__title">
-            Desenvolvendo sonhos com tecnologia e precisão.
+            Desenvolvendo sonhos com&nbsp;
+            <span className="animate_animated animate__fadeInDown">
+              tecnologia
+            </span>
+            &nbsp;e&nbsp;
+            <span className="animate_animated animate__fadeInDown">
+              precisão
+            </span>
           </h2>
           <ArrowButton href="#sobre">Quero conhecer mais</ArrowButton>
         </div>
@@ -29,11 +38,7 @@ const Home = () => {
           {Object.values(LINKS.social).map(({ icon, alt, href }) => (
             <li key={alt} className="landing__social-item">
               <a target="_blank" href={href} rel="noreferrer">
-                <img
-                  className="landing__social-item-image"
-                  src={icon}
-                  alt={alt}
-                />
+                {icon}
               </a>
             </li>
           ))}
@@ -53,7 +58,11 @@ const Home = () => {
             <ArrowButton href="#projetos">Conhecer projetos</ArrowButton>
           </div>
           <div className="about__image">
-            <img src={FelipeImage} alt="Imagem de Felipe Alencar" />
+            <div className="about__image-container">
+              <AuthorBackground className="animate_animated animate__fadeInDown with-stroke" />
+              <AuthorBackground className="animate_animated animate__fadeInDown with-stroke" />
+              <img src={FelipeImage} alt="Imagem de Felipe Alencar" />
+            </div>
             <div className="about__image-caption">
               <h3>Felipe Alencar</h3>
               <span>Fundador e Especialista Técnico</span>
@@ -65,11 +74,12 @@ const Home = () => {
       <section id="projetos" className="projects">
         <div className="projects__inner container">
           <h2 className="projects__title">Projetos</h2>
-          <ul className="projects__list">
+          <h3 className="projects__coming-soon ">Em breve...</h3>
+          {/* <ul className="projects__list">
             <li className="projects__list-item" />
             <li className="projects__list-item" />
             <li className="projects__list-item" />
-          </ul>
+          </ul> */}
 
           <ArrowButton white href="#contato">
             Quero saber mais
@@ -81,29 +91,26 @@ const Home = () => {
         <h2 className="contact__title">Contato</h2>
 
         <div className="contact__inner">
-          <img
+          {/* <img
             className="contact__image"
-            src={colorMode === "dark" ? LightContactImage : DarkContactImage}
+            src={colorMode === "dark" ? DarkContactImage : LightContactImage}
             alt="Pessoas montando um website em conjunto."
-          />
+          /> */}
+          <div className="contact__image">
+            {colorMode === "dark" ? (
+              <DarkContactImage />
+            ) : (
+              <LightContactImage />
+            )}
+          </div>
           <form className="contact__form" action="">
-            <div className="row">
-              <label htmlFor="first-name">
-                Nome
-                <input name="first-name" type="text" placeholder="João" />
-              </label>
-              <label htmlFor="last-name">
-                Sobrenome
-                <input name="last-name" type="text" placeholder="Silva" />
-              </label>
-            </div>
+            <label htmlFor="name">
+              Nome
+              <input name="name" type="text" placeholder="Nick" />
+            </label>
             <label htmlFor="email">
               Email
-              <input
-                name="email"
-                type="text"
-                placeholder="joao.silva@gmail.com"
-              />
+              <input name="email" type="text" placeholder="nick@email.com" />
             </label>
             <label htmlFor="summary">
               Assunto

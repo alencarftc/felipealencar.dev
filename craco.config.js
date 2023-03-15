@@ -35,6 +35,7 @@ module.exports = {
       "@components": path.resolve(__dirname, "./src/components"),
       "@configs": path.resolve(__dirname, "./src/configs"),
       "@images": path.resolve(__dirname, "./src/assets/images"),
+      "@icons": path.resolve(__dirname, "./src/assets/icons"),
       "@providers": path.resolve(__dirname, "./src/providers"),
     },
   },

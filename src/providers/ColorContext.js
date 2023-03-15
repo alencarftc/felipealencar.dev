@@ -19,13 +19,14 @@ export function ColorProvider({ children }) {
   );
 
   useEffect(() => {
-    const newColorMode = toggleColorMode();
-    document.documentElement.setAttribute("data-theme", newColorMode);
-    localStorage.setItem("theme", newColorMode);
-  }, [colorMode, toggleColorMode]);
+    document.documentElement.setAttribute("data-theme", colorMode);
+  }, []);
 
   const handleOnColorChange = () => {
-    setColorMode(toggleColorMode());
+    const newColorMode = toggleColorMode();
+    setColorMode(newColorMode);
+    document.documentElement.setAttribute("data-theme", newColorMode);
+    localStorage.setItem("theme", newColorMode);
   };
 
   return (

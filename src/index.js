@@ -4,6 +4,8 @@ import ReactDOM from "react-dom/client";
 
 import "./assets/css/normalize.css";
 import "./assets/css/reset.css";
+import "animate.css";
+
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

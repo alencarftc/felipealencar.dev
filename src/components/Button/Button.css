@@ -1,6 +1,6 @@
 .button {
   font-family: var(--heading-font-family);
-  background: var(--red);
+  background: var(--contrast-color);
   color: var(--main-background-color);
   padding: 8px 16px;
   border-radius: 25px;

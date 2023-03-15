@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 
 import { ColorContext } from "@providers/ColorContext";
-import LightColorToggler from "@images/light-mode.svg";
-import DarkColorToggler from "@images/dark-mode.svg";
+import LightColorToggler from "@images/color-toggler__light.svg";
+import DarkColorToggler from "@images/color-toggler__dark.svg";
 import Button from "@components/Button";
-import LightLogoImage from "@images/light-logo.svg";
-import DarkLogoImage from "@images/dark-logo.svg";
+import { ReactComponent as LightLogoImage } from "@images/logo__light.svg";
+import { ReactComponent as DarkLogoImage } from "@images/logo__dark.svg";
 
 import "./Header.css";
 
@@ -20,15 +20,13 @@ const Header = () => {
 
   return (
     <header className="header">
-      <h1>
-        <img
-          className="header__logo"
-          src={colorMode === "dark" ? DarkLogoImage : LightLogoImage}
-          alt="Fecasti Tecnologia"
-        />
+      <h1 className="animate__animated animate__lightSpeedInLeft">
+        <div className="header__logo">
+          {colorMode === "dark" ? <DarkLogoImage /> : <LightLogoImage />}
+        </div>
       </h1>
 
-      <nav className="header__nav">
+      <nav className="header__nav animate__animated animate__lightSpeedInRight">
         <ul className="header__nav-list">
           {links.map(({ url, label }) => (
             <li key={label} className="header__nav-item">
@@ -47,16 +45,12 @@ const Header = () => {
         </ul>
       </nav>
 
-      <button
-        type="button"
-        className="header__color-toggler"
+      <img
+        className="header__color-toggler animate_animated animate__rotateInDownRight"
         onClick={() => handleOnColorChange()}
-      >
-        <img
-          src={colorMode === "dark" ? DarkColorToggler : LightColorToggler}
-          alt="Alternar cores"
-        />
-      </button>
+        src={colorMode === "dark" ? LightColorToggler : DarkColorToggler}
+        alt="Alternar cores"
+      />
     </header>
   );
 };

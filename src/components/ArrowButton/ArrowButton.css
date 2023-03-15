@@ -16,17 +16,11 @@
   border: none;
   border-radius: inherit;
 }
-.arrow-button__image {
-  max-width: 36px;
-  background: var(--red);
-  border-radius: 20px;
-  padding: 10px 8px;
-}
 .arrow-button__content {
   margin-left: 24px;
   font-size: inherit;
   line-height: 2.8rem;
   font-family: var(--heading-font-family), sans-serif;
   white-space: nowrap;
-  color: var(--red);
+  color: var(--contrast-color);
 }

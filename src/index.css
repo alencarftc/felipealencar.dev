@@ -3,11 +3,6 @@
 *::after {
   box-sizing: border-box;
 }
-:root {
-  color-scheme: light dark; /* both supported */
-  --text-font-family: "Mulish";
-  --heading-font-family: "Hammersmith One";
-}
 
 @font-face {
   font-family: "Hammersmith One";
@@ -36,16 +31,26 @@
     url("./assets/fonts/Mulish-Bold.ttf") format("truetype");
 }
 
+:root {
+  --animation-duration: 2s;
+  color-scheme: light dark; /* both supported */
+  --text-font-family: "Mulish";
+  --heading-font-family: "Hammersmith One";
+
+  --white: #f5f5f5;
+  --black: #2e2836;
+  --dark-purple: #1c2039;
+  --purple-gray: #252c47;
+  --purple: #3d348bbf;
+}
 :root,
 html[data-theme="light"] {
-  --red: #d81159;
-  --white: #f5f5f5;
+  --contrast-color: #d81159;
   --white-grayish: #e1eff6;
-  --black: #2e2836;
 
   --main-background-color: var(--white-grayish);
   --main-heading-color: var(--black);
-  --alt-background-color: var(--red);
+  --alt-background-color: var(--contrast-color);
   --alt-heading-color: var(--white-grayish);
   --input-background-color: var(--white);
   --input-stroke-color: var(--white-grayish);
@@ -55,16 +60,11 @@ html[data-theme="light"] {
   --projects-title-color: var(--white-grayish);
 }
 :root[data-theme="dark"] {
-  --red: #d81159bf;
-  --white: #f5f5f5;
-  --white-grayish: #e1eff6bf;
-  --dark-purple: #1c2039;
-  --purple-gray: #252c47;
-  --purple: #3d348bbf;
+  --contrast-color: #f6ae2d;
+  --white-grayish: #e1eff6cc;
 
-  --contrast-color: var(--red);
   --main-background-color: var(--dark-purple);
-  --main-heading-color: var(--red);
+  --main-heading-color: var(--contrast-color);
   --alt-background-color: var(--purple-gray);
   --alt-heading-color: var(--white-grayish);
   --input-background-color: var(--purple-gray);
@@ -72,13 +72,20 @@ html[data-theme="light"] {
   --input-placeholder-color: #e1eff64d;
   --text-color: var(--white-grayish);
 
-  --projects-title-color: var(--red);
+  --projects-title-color: var(--contrast-color);
+}
+svg {
+  fill: var(--contrast-color);
 }
 
+svg.with-stroke {
+  stroke: var(--contrast-color);
+}
 html {
   font-size: 62.5%;
   background: var(--main-background-color);
   color: var(--heading-color);
+  transition: background 150ms ease;
 }
 body {
   -webkit-font-smoothing: antialiased;

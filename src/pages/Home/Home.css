@@ -14,6 +14,9 @@
 .landing__title {
   color: var(--text-color);
 }
+.landing__title span {
+  display: inline-block;
+}
 
 .landing__social {
   display: flex;
@@ -29,7 +32,7 @@
 }
 
 .about__title {
-  margin: 16rem 0 12rem;
+  margin: 12rem 0 12rem;
   color: var(--main-heading-color);
 }
 .about__inner {
@@ -56,13 +59,41 @@
   margin-top: -90px;
   text-align: center;
 }
-.about__image-caption {
+.about__image-container {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  height: 530px;
+}
+.about__image-container svg {
+  fill: none;
+  position: absolute;
+  height: inherit;
+}
+.about__image-container svg:nth-child(1) {
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+}
+.about__image-container svg:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(15deg);
+}
+.about__image-container * {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.about__image-container img {
+  transform: translate(-50%, -50%);
+  width: 85%;
+  position: absolute;
+}
+.about.container .about__image-caption {
   margin-top: 32px;
   text-align: center;
 }
 .about__image-caption h3 {
   font-size: 2.6rem;
-  color: var(--red);
+  color: var(--contrast-color);
 }
 .about__image-caption span {
   font-size: 1.8rem;
@@ -97,6 +128,14 @@
   min-width: 250px;
   background: var(--alt-heading-color);
 }
+.projects__coming-soon {
+  font-size: 7.2rem;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  color: var(--alt-heading-color);
+  padding: 120px 0;
+}
 .projects .arrow-button {
   padding: 8px 32px;
   margin: 12rem auto 18rem;
@@ -104,8 +143,8 @@
 }
 
 .contact__title {
-  color: var(--red);
-  margin: 0 0 8rem;
+  color: var(--contrast-color);
+  margin: 12rem 0 8rem;
 }
 .contact__inner {
   display: flex;
@@ -163,9 +202,9 @@ footer {
 footer p {
   width: inherit;
   display: inherit;
-  color: var(--main-background-color);
+  color: var(--white);
   padding: 20px !important;
-  background: var(--main-heading-color);
+  background: var(--purple-gray);
   padding: 12px 0;
   font-size: 2rem;
 }
@@ -199,6 +238,9 @@ footer p {
 
   .about__inner {
     flex-flow: column-reverse nowrap !important;
+  }
+  .about__image-container {
+    height: 250px;
   }
   .about__text p {
     line-height: 3.2rem !important;
