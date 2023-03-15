@@ -8,6 +8,34 @@
   --text-font-family: "Mulish";
   --heading-font-family: "Hammersmith One";
 }
+
+@font-face {
+  font-family: "Hammersmith One";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("HammersmithOne-Regular"), local("HammersmithOne Regular"),
+    url("./assets/fonts/HammersmithOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Mulish Regular"), local("Mulish-Regular"),
+    url("./assets/fonts/Mulish-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Mulish";
+  font-style: bold;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Mulish Bold"), local("Mulish-Bold"),
+    url("./assets/fonts/Mulish-Bold.ttf") format("truetype");
+}
+
 :root,
 html[data-theme="light"] {
   --red: #d81159;
