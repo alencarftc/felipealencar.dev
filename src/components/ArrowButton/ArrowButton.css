@@ -21,6 +21,6 @@
   font-size: inherit;
   line-height: 2.8rem;
   font-family: var(--heading-font-family), sans-serif;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   color: var(--contrast-color);
 }

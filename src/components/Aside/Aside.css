@@ -1,0 +1,112 @@
+span.overlay {
+  background: #171717;
+  height: 100vh;
+  display: inline-block;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  width: 0;
+  transition: opacity 250ms ease-in-out;
+  left: 0;
+}
+span.overlay.open {
+  width: 100%;
+  opacity: 0.5;
+}
+aside {
+  height: 100vh;
+  position: fixed;
+  max-width: 280px;
+  background: var(--main-background-color);
+  display: inline-block;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  width: 0;
+  display: none;
+}
+aside.open {
+  width: 100%;
+  opacity: 1;
+  display: inline-block;
+}
+.aside__inner {
+  height: inherit;
+  width: inherit;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  padding: 25px 0 160px;
+}
+.aside__nav-list {
+  width: 100%;
+}
+.aside__nav-item {
+  padding: 16px 42px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: left;
+}
+.aside__toggler {
+  border-radius: 16px;
+  margin-left: 42px;
+}
+.aside__toggler-title {
+  font-size: 1.6rem;
+  color: var(--contrast-color);
+  margin-bottom: 12px;
+}
+.aside__nav-social-list {
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.aside__nav-social-item {
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+.aside__nav-social-item a {
+  display: inline-block;
+  height: 100%;
+}
+@media screen and (max-height: 660px) {
+  .aside__inner {
+    padding: 36px 0 0;
+  }
+  .aside__toggler {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    margin-left: 18px;
+    margin-right: 12px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .aside__toggler-title {
+    margin-bottom: 0;
+    margin-left: 12px;
+  }
+  .aside__nav-social-list {
+    bottom: 0;
+    justify-content: space-between;
+    padding: 0 4px;
+  }
+  .aside__nav-list {
+    position: static;
+    transform: unset;
+  }
+  .aside__nav-social-item {
+    padding: 4px 14px;
+    width: unset;
+  }
+  .aside__nav-item {
+    text-align: left;
+    padding: 8px 18px;
+    font-size: 1.6rem;
+  }
+  .aside__nav-social-item svg {
+    width: 2.4rem !important;
+  }
+}

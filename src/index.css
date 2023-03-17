@@ -56,6 +56,7 @@ html[data-theme="light"] {
   --input-stroke-color: var(--white-grayish);
   --input-placeholder-color: #2f2e414d;
   --text-color: var(--black);
+  --toggle-shadow-color: var(--dark-purple);
 
   --projects-title-color: var(--white-grayish);
 }
@@ -71,6 +72,7 @@ html[data-theme="light"] {
   --input-stroke-color: var(--purple);
   --input-placeholder-color: #e1eff64d;
   --text-color: var(--white-grayish);
+  --toggle-shadow-color: var(--contrast-color);
 
   --projects-title-color: var(--contrast-color);
 }
@@ -135,7 +137,6 @@ section:not(:first-child):not(:nth-child(n-1)):not(:last-child) {
 section h2 {
   font-size: 7.6rem;
   color: var(--heading-color);
-  width: 100%;
 }
 
 @media screen and (max-width: 1080px) {

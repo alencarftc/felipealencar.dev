@@ -1,9 +1,12 @@
 .header {
+  padding: 24px 0;
+  width: 100%;
+}
+.header__inner {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 0 0;
 }
 .header__logo {
   max-width: 180px;
@@ -33,7 +36,8 @@
 .header__nav-item button .header__nav-link {
   color: var(--main-background-color);
 }
-.header__color-toggler {
+.header__color-toggler-desktop {
+  max-width: 100px;
   display: inline-block;
   position: absolute;
   top: 0;
@@ -43,11 +47,23 @@
   filter: brightness(0.7);
   transition: right 120ms ease, top 120ms ease, filter 120ms ease;
 }
-.header__color-toggler:hover {
-  filter: brightness(1);
+.header__color-toggler-desktop:hover {
+  filter: blur(1) brightness(1) drop-shadow(0 0 20px var(--toggle-shadow-color));
 }
 @media screen and (max-width: 1024px) {
-  .header__nav-item {
+  .header__color-toggler-desktop,
+  .header__nav {
     display: none;
+  }
+  .header__nav-list {
+    margin-right: 0;
+  }
+  .header__inner {
+    padding: 0 !important;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .header__nav-list {
+    margin-right: 120px;
   }
 }

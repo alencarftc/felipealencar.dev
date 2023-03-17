@@ -4,6 +4,12 @@ import { ReactComponent as GithubIcon } from "@icons/github.svg";
 import { ReactComponent as MediumIcon } from "@icons/medium.svg";
 
 export const LINKS = {
+  nav: [
+    { url: "#inicio", label: "Início" },
+    { url: "#sobre", label: "Sobre" },
+    { url: "#projetos", label: "Projetos" },
+    { url: "#contact", label: "Contato" },
+  ],
   social: {
     linkedin: {
       icon: <LinkedinIcon />,

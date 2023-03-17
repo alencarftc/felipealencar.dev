@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 import Header from "@components/Header";
 import Button from "@components/Button";
@@ -8,41 +8,33 @@ import FelipeImage from "@images/_felipe.png";
 import { ReactComponent as AuthorBackground } from "@images/author_stroke_bg.svg";
 import { ReactComponent as LightContactImage } from "@images/contact__light.svg";
 import { ReactComponent as DarkContactImage } from "@images/contact__dark.svg";
-import { LINKS } from "@configs/links";
+
+import { ColorContext } from "@providers/ColorContext";
+import { MenuContext } from "@providers/MenuContext";
+
+import Aside from "@components/Aside/Aside";
 
 import "./Home.css";
-import { ColorContext } from "@providers/ColorContext";
+import SocialIcons from "@components/SocialIcons";
 
 const Home = () => {
-  const [menuOpen, setMenuOpen] = useState();
+  const { open, close } = useContext(MenuContext);
   const { colorMode } = useContext(ColorContext);
 
   return (
     <>
+      <Aside open={open} close={close} />
       <section id="inicio" className="landing container">
-        <Header isOpen={menuOpen} />
-        <div className="landing__cta">
-          <h2 className="title landing__title">
-            Desenvolvendo sonhos com&nbsp;
-            <span className="animate_animated animate__fadeInDown">
-              tecnologia
-            </span>
-            &nbsp;e&nbsp;
-            <span className="animate_animated animate__fadeInDown">
-              precisão
-            </span>
-          </h2>
+        <Header />
+        <div className="landing__cta container">
+          <div className="animate_animated animate__lightSpeedInLeft">
+            <h2 className="title landing__title">
+              Desenvolvendo sonhos com tecnologia e precisão
+            </h2>
+          </div>
           <ArrowButton href="#sobre">Quero conhecer mais</ArrowButton>
         </div>
-        <ul className="landing__social">
-          {Object.values(LINKS.social).map(({ icon, alt, href }) => (
-            <li key={alt} className="landing__social-item">
-              <a target="_blank" href={href} rel="noreferrer">
-                {icon}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <SocialIcons />
       </section>
 
       <section id="sobre" className="about container">
@@ -91,16 +83,11 @@ const Home = () => {
         <h2 className="contact__title">Contato</h2>
 
         <div className="contact__inner">
-          {/* <img
-            className="contact__image"
-            src={colorMode === "dark" ? DarkContactImage : LightContactImage}
-            alt="Pessoas montando um website em conjunto."
-          /> */}
-          <div className="contact__image">
+          <div>
             {colorMode === "dark" ? (
-              <DarkContactImage />
+              <DarkContactImage className="contact__image" />
             ) : (
-              <LightContactImage />
+              <LightContactImage className="contact__image" />
             )}
           </div>
           <form className="contact__form" action="">

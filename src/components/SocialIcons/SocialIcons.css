@@ -1,0 +1,17 @@
+.social {
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
+  flex-flow: column nowrap;
+  gap: 5px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+.social__item {
+  cursor: pointer;
+}
+.social__link {
+  height: 100%;
+  padding: 10px 0 10px 10px;
+  display: inline-block;
+}

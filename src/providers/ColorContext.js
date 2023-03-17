@@ -13,24 +13,25 @@ export function ColorProvider({ children }) {
         : "light")
   );
 
-  const toggleColorMode = useCallback(
+  const _toggleColorMode = useCallback(
     () => (colorMode === "dark" ? "light" : "dark"),
     [colorMode]
   );
 
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", colorMode);
-  }, []);
+  useEffect(
+    () => document.documentElement.setAttribute("data-theme", colorMode),
+    [colorMode]
+  );
 
-  const handleOnColorChange = () => {
-    const newColorMode = toggleColorMode();
+  const toggleColorMode = () => {
+    const newColorMode = _toggleColorMode();
     setColorMode(newColorMode);
     document.documentElement.setAttribute("data-theme", newColorMode);
     localStorage.setItem("theme", newColorMode);
   };
 
   return (
-    <ColorContext.Provider value={{ colorMode, handleOnColorChange }}>
+    <ColorContext.Provider value={{ colorMode, toggleColorMode }}>
       {children}
     </ColorContext.Provider>
   );
