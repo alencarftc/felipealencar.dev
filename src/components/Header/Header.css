@@ -48,7 +48,7 @@
   transition: right 120ms ease, top 120ms ease, filter 120ms ease;
 }
 .header__color-toggler-desktop:hover {
-  filter: blur(1) brightness(1) drop-shadow(0 0 20px var(--toggle-shadow-color));
+  filter: brightness(1) drop-shadow(0 0 20px var(--toggle-shadow-color));
 }
 @media screen and (max-width: 1024px) {
   .header__color-toggler-desktop,

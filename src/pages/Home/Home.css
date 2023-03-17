@@ -250,7 +250,11 @@ footer p {
   #logo {
     max-width: 150px;
   }
-  h2 {
+  .projects__coming-soon {
+    font-size: 4.2rem;
+  }
+
+  .landing__title {
     font-size: 2.8rem !important;
   }
   .arrow-button {

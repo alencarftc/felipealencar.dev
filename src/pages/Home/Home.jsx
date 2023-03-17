@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import Header from "@components/Header";
 import Button from "@components/Button";
 import ArrowButton from "@components/ArrowButton";
-import FelipeImage from "@images/_felipe.png";
+import FelipeImage from "@images/felipe.webp";
 import { ReactComponent as AuthorBackground } from "@images/author_stroke_bg.svg";
 import { ReactComponent as LightContactImage } from "@images/contact__light.svg";
 import { ReactComponent as DarkContactImage } from "@images/contact__dark.svg";
