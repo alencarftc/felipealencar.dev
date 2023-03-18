@@ -151,6 +151,7 @@
   flex-flow: column nowrap;
   align-items: center;
   width: 100%;
+  margin: 0 auto;
 }
 .contact__form {
   width: inherit;
@@ -242,6 +243,9 @@ footer p {
   .about.container,
   .projects .container,
   .contact.container {
+    text-align: center;
+  }
+  .projects__title {
     text-align: center;
   }
   .arrow-button {

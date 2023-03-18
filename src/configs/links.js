@@ -8,7 +8,7 @@ export const LINKS = {
     { url: "#inicio", label: "Início" },
     { url: "#sobre", label: "Sobre" },
     { url: "#projetos", label: "Projetos" },
-    { url: "#contact", label: "Contato" },
+    { url: "#contato", label: "Contato" },
   ],
   social: {
     whatsapp: {

@@ -15,7 +15,11 @@ function Aside({ open, close }) {
           <ul className="aside__nav-list">
             {LINKS.nav.map(({ url, label }) => (
               <li key={label} className="aside__nav-item">
-                <a className="aside__nav-link" href={url}>
+                <a
+                  onClick={() => close()}
+                  className="aside__nav-link"
+                  href={url}
+                >
                   {label}
                 </a>
               </li>
