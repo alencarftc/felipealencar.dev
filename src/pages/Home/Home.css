@@ -200,6 +200,8 @@
   text-align: center;
   background: seagreen;
   border-radius: 16px;
+  width: 100%;
+  transition: 1s all;
 }
 
 footer {

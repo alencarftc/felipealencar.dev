@@ -7,11 +7,11 @@ import MenuProvider from "@providers/MenuContext";
 function App() {
   return (
     <div id="app">
-      <MenuProvider>
-        <ColorProvider>
+      <ColorProvider>
+        <MenuProvider>
           <Home />
-        </ColorProvider>
-      </MenuProvider>
+        </MenuProvider>
+      </ColorProvider>
     </div>
   );
 }

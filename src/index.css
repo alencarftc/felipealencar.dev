@@ -157,3 +157,7 @@ h5,
 h6 {
   font-family: var(--heading-font-family), sans-serif;
 }
+
+input:-webkit-autofill {
+  background-color: var(--input-background-color);
+}

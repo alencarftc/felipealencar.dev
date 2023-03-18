@@ -96,9 +96,13 @@ const Home = () => {
           </div>
           <div className="contact__form-container">
             <form
+              id="contact__form"
               className="contact__form"
               action="https://formspree.io/f/xgebzgdd"
-              onSubmit={handleSubmit}
+              onSubmit={() => {
+                handleSubmit();
+                document.getElementById("contact__form").reset();
+              }}
               method="POST"
             >
               <label htmlFor="name">
@@ -158,17 +162,18 @@ const Home = () => {
                 class="g-recaptcha"
                 data-sitekey="6LfXya4UAAAAAC39w62y1TuaUE4gsynrvQANfrtN"
               ></div> */}
-              <Button disabled={state.submitting} type="submit">
-                Enviar
-              </Button>
+              {state.succeeded ? (
+                <p className="contact__success">
+                  Obrigado por submeter sua mensagem.
+                  <br />
+                  Em breve estaremos entrando em contato.
+                </p>
+              ) : (
+                <Button disabled={state.submitting} type="submit">
+                  Enviar
+                </Button>
+              )}
             </form>
-            {state.succeeded && (
-              <p className="contact__success">
-                Obrigado por submeter sua mensagem.
-                <br />
-                Em breve estaremos entrando em contato.
-              </p>
-            )}
           </div>
         </div>
       </section>
