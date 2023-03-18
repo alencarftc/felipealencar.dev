@@ -14,7 +14,7 @@ export const LINKS = {
     whatsapp: {
       icon: <WhatsappIcon />,
       alt: "Whatsapp",
-      href: "https://web.whatsapp.com/send/?phone=5541991670918&text=Ol%C3%A1,%20tudo%20bem?%20Eu%20gostaria%20de...",
+      href: "https://wa.me/5541991670918?text=Ol%C3%A1,%20tudo%20bem?%20Eu%20gostaria%20de...",
     },
     linkedin: {
       icon: <LinkedinIcon />,
