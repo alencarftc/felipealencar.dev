@@ -109,7 +109,56 @@
     <meta name="theme-color" content="#ffffff" />
 
     <title>Fecasti Tecnologia - Desenvolvimento de Software</title>
-    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/fonts/HammersmithOne-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/fonts/Mulish-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/fonts/Mulish-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <style>
+      @font-face {
+        font-family: "Hammersmith One";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local("HammersmithOne-Regular"), local("HammersmithOne Regular"),
+          url("fonts/HammersmithOne-Regular.ttf") format("truetype");
+      }
+
+      @font-face {
+        font-family: "Mulish";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local("Mulish Regular"), local("Mulish-Regular"),
+          url("fonts/Mulish-Regular.ttf") format("truetype");
+      }
+
+      @font-face {
+        font-family: "Mulish";
+        font-style: bold;
+        font-weight: 700;
+        font-display: swap;
+        src: local("Mulish Bold"), local("Mulish-Bold"),
+          url("fonts/Mulish-Bold.ttf") format("truetype");
+      }
+    </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

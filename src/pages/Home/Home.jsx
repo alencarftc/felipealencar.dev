@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 
 import Header from "@components/Header";
@@ -13,17 +13,22 @@ import { ReactComponent as DarkContactImage } from "@images/contact__dark.svg";
 import { ColorContext } from "@providers/ColorContext";
 import { MenuContext } from "@providers/MenuContext";
 
+import SocialIcons from "@components/SocialIcons";
 import Aside from "@components/Aside/Aside";
 
 import "./Home.css";
-import SocialIcons from "@components/SocialIcons";
-import { useState } from "react";
 
 const Home = () => {
   const { open, close } = useContext(MenuContext);
   const { colorMode } = useContext(ColorContext);
   const [state, handleSubmit] = useForm("xgebzgdd");
-  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    var el = document.getElementById("g-recaptcha-response");
+    if (el) {
+      el.setAttribute("required", "required");
+    }
+  }, []);
 
   return (
     <>
@@ -99,9 +104,10 @@ const Home = () => {
               id="contact__form"
               className="contact__form"
               action="https://formspree.io/f/xgebzgdd"
-              onSubmit={() => {
-                handleSubmit();
-                document.getElementById("contact__form").reset();
+              onSubmit={(values) => {
+                handleSubmit(values);
+                document.querySelector("#contact__form").reset();
+                document.querySelector(".g-recaptcha").style.display = "none";
               }}
               method="POST"
             >
@@ -158,10 +164,13 @@ const Home = () => {
                   errors={state.errors}
                 />
               </label>
-              {/* <div
-                class="g-recaptcha"
-                data-sitekey="6LfXya4UAAAAAC39w62y1TuaUE4gsynrvQANfrtN"
-              ></div> */}
+              <label htmlFor="g-recaptcha">
+                <div
+                  className="g-recaptcha"
+                  data-sitekey="6Lcb6Q8lAAAAAMsPMcTh9eJEL38IEiu7MxS1mdMz"
+                  required
+                ></div>
+              </label>
               {state.succeeded ? (
                 <p className="contact__success">
                   Obrigado por submeter sua mensagem.

@@ -4,33 +4,6 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: "Hammersmith One";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("HammersmithOne-Regular"), local("HammersmithOne Regular"),
-    url("./assets/fonts/HammersmithOne-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Mulish";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Mulish Regular"), local("Mulish-Regular"),
-    url("./assets/fonts/Mulish-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Mulish";
-  font-style: bold;
-  font-weight: 700;
-  font-display: swap;
-  src: local("Mulish Bold"), local("Mulish-Bold"),
-    url("./assets/fonts/Mulish-Bold.ttf") format("truetype");
-}
-
 :root {
   --animation-duration: 2s;
   color-scheme: light dark; /* both supported */
@@ -160,4 +133,16 @@ h6 {
 
 input:-webkit-autofill {
   background-color: var(--input-background-color);
+}
+
+.g-recaptcha {
+  margin: 4px 0 16px;
+  width: 100%;
+}
+#g-recaptcha-response {
+  display: block !important;
+  position: absolute;
+  margin: -50px 0 0 0 !important;
+  z-index: -999999;
+  opacity: 0;
 }
