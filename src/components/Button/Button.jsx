@@ -2,8 +2,12 @@ import React from "react";
 
 import "./Button.css";
 
-const Button = ({ type = "button", children }) => (
-  <button className="button" type={type}>
+const Button = ({ disabled = false, type = "button", children }) => (
+  <button
+    className={`button button-${disabled ? "disabled" : "abled"}`}
+    type={type}
+    disabled={disabled}
+  >
     {children}
   </button>
 );

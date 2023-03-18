@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useContext } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 import Header from "@components/Header";
 import Button from "@components/Button";
@@ -16,10 +17,13 @@ import Aside from "@components/Aside/Aside";
 
 import "./Home.css";
 import SocialIcons from "@components/SocialIcons";
+import { useState } from "react";
 
 const Home = () => {
   const { open, close } = useContext(MenuContext);
   const { colorMode } = useContext(ColorContext);
+  const [state, handleSubmit] = useForm("xgebzgdd");
+  const [message, setMessage] = useState("");
 
   return (
     <>
@@ -90,29 +94,82 @@ const Home = () => {
               <LightContactImage className="contact__image" />
             )}
           </div>
-          <form className="contact__form" action="">
-            <label htmlFor="name">
-              Nome
-              <input name="name" type="text" placeholder="Nick" />
-            </label>
-            <label htmlFor="email">
-              Email
-              <input name="email" type="text" placeholder="nick@email.com" />
-            </label>
-            <label htmlFor="summary">
-              Assunto
-              <input name="summary" type="text" placeholder="Novo projeto" />
-            </label>
-            <label htmlFor="message">
-              Mensagem
-              <textarea
-                name="message"
-                type="text"
-                placeholder="Olá, eu gostaria de..."
-              />
-            </label>
-            <Button type="submit">Enviar</Button>
-          </form>
+          <div className="contact__form-container">
+            <form
+              className="contact__form"
+              action="https://formspree.io/f/xgebzgdd"
+              onSubmit={handleSubmit}
+              method="POST"
+            >
+              <label htmlFor="name">
+                Nome
+                <input name="name" type="text" placeholder="Nick" required />
+                <ValidationError
+                  prefix="Text"
+                  field="text"
+                  errors={state.errors}
+                />
+              </label>
+
+              <label htmlFor="email">
+                Email
+                <input
+                  name="email"
+                  type="text"
+                  placeholder="nick@email.com"
+                  required
+                />
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
+                />
+              </label>
+
+              <label htmlFor="summary">
+                Assunto
+                <input
+                  name="summary"
+                  type="text"
+                  placeholder="Novo projeto"
+                  required
+                />
+                <ValidationError
+                  prefix="Summary"
+                  field="summary"
+                  errors={state.errors}
+                />
+              </label>
+              <label htmlFor="message">
+                Mensagem
+                <textarea
+                  name="message"
+                  type="text"
+                  placeholder="Olá, eu gostaria de..."
+                  required
+                />
+                <ValidationError
+                  prefix="Message"
+                  field="message"
+                  errors={state.errors}
+                />
+              </label>
+              {/* <div
+                class="g-recaptcha"
+                data-sitekey="6LfXya4UAAAAAC39w62y1TuaUE4gsynrvQANfrtN"
+              ></div> */}
+              <Button disabled={state.submitting} type="submit">
+                Enviar
+              </Button>
+            </form>
+            {state.succeeded && (
+              <p className="contact__success">
+                Obrigado por submeter sua mensagem.
+                <br />
+                Em breve estaremos entrando em contato.
+              </p>
+            )}
+          </div>
         </div>
       </section>
 
