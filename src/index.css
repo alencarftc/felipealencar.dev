@@ -9,45 +9,52 @@
   color-scheme: light dark; /* both supported */
   --text-font-family: "Mulish";
   --heading-font-family: "Hammersmith One";
+  --hover-default-transition: transform 250ms ease;
 
   --white: #f5f5f5;
   --black: #2e2836;
+  --red: #d81159;
+  --yellow: #f6ae2d;
   --dark-purple: #1c2039;
-  --purple-gray: #252c47;
+  --grayish-purple: #252c47;
   --purple: #3d348bbf;
 }
 :root,
 html[data-theme="light"] {
-  --contrast-color: #d81159;
-  --white-grayish: #e1eff6;
+  --contrast-color: var(--red);
+  --grayish-white: #e1eff6;
 
-  --main-background-color: var(--white-grayish);
+  --main-background-color: var(--grayish-white);
   --main-heading-color: var(--black);
   --alt-background-color: var(--contrast-color);
-  --alt-heading-color: var(--white-grayish);
+  --alt-heading-color: var(--grayish-white);
   --input-background-color: var(--white);
-  --input-stroke-color: var(--white-grayish);
+  --input-stroke-color: var(--grayish-white);
   --input-placeholder-color: #2f2e414d;
   --text-color: var(--black);
   --toggle-shadow-color: var(--dark-purple);
 
-  --projects-title-color: var(--white-grayish);
+  --projects-title-color: var(--grayish-white);
+  --projects-arrow-button-background-color: var(--white);
+  --projects-arrow-button-background-text: var(--red);
 }
 :root[data-theme="dark"] {
-  --contrast-color: #f6ae2d;
-  --white-grayish: #e1eff6cc;
+  --contrast-color: var(--yellow);
+  --grayish-white: #e1eff6cc;
 
   --main-background-color: var(--dark-purple);
   --main-heading-color: var(--contrast-color);
-  --alt-background-color: var(--purple-gray);
-  --alt-heading-color: var(--white-grayish);
-  --input-background-color: var(--purple-gray);
+  --alt-background-color: var(--grayish-purple);
+  --alt-heading-color: var(--grayish-white);
+  --input-background-color: var(--grayish-purple);
   --input-stroke-color: var(--purple);
   --input-placeholder-color: #e1eff64d;
-  --text-color: var(--white-grayish);
+  --text-color: var(--grayish-white);
   --toggle-shadow-color: var(--contrast-color);
 
   --projects-title-color: var(--contrast-color);
+  --projects-arrow-button-background-color: var(--white);
+  --projects-arrow-button-background-text: var(--red);
 }
 svg {
   fill: var(--contrast-color);
@@ -61,6 +68,7 @@ html {
   background: var(--main-background-color);
   color: var(--heading-color);
   transition: background 150ms ease;
+  scroll-behavior: smooth;
 }
 body {
   -webkit-font-smoothing: antialiased;

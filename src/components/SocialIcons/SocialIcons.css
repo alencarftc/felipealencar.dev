@@ -9,6 +9,10 @@
 }
 .social__item {
   cursor: pointer;
+  transition: var(--hover-default-transition);
+}
+.social__item:hover {
+  transform: translateY(-3px);
 }
 .social__link {
   height: 100%;

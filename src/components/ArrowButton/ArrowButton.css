@@ -1,6 +1,4 @@
 .arrow-button.white button {
-  justify-content: center;
-  width: auto;
   background: var(--main-background-color);
   padding: 8px 16px;
 }
@@ -8,13 +6,31 @@
   display: inline-block;
   font-size: inherit;
   border-radius: 50px;
+  transition: var(--hover-default-transition);
+}
+.arrow-button:hover {
+  transform: translateY(-3px);
+}
+.arrow-button svg {
+  fill: var(--contrast-color);
 }
 .arrow-button button {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
   border: none;
   border-radius: inherit;
+  color: var(--contrast-color);
+}
+.arrow-button.contrast svg {
+  fill: var(--main-background-color);
+}
+
+.arrow-button.contrast button {
+  background: var(--contrast-color);
+  padding: 8px 16px;
+  color: var(--main-background-color);
 }
 .arrow-button__content {
   margin-left: 24px;
@@ -22,5 +38,5 @@
   line-height: 2.8rem;
   font-family: var(--heading-font-family), sans-serif;
   /* white-space: nowrap; */
-  color: var(--contrast-color);
+  color: inherit;
 }

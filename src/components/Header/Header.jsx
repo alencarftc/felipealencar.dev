@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
-import { ColorContext, ColorProvider } from "@providers/ColorContext";
+import { ColorContext } from "@providers/ColorContext";
 import LightColorToggler from "@images/color-toggler__light.svg";
 import DarkColorToggler from "@images/color-toggler__dark.svg";
 import Button from "@components/Button";
@@ -17,7 +17,7 @@ const Header = () => {
   const { open, close } = useContext(MenuContext);
 
   const links = [
-    { url: "#inicio", label: "Início" },
+    { url: "#inicio", label: "Início", highlight: true },
     { url: "#sobre", label: "Sobre" },
     { url: "#projetos", label: "Projetos" },
   ];
@@ -37,8 +37,13 @@ const Header = () => {
 
         <nav className="header__nav">
           <ul className="header__nav-list">
-            {links.map(({ url, label }) => (
-              <li key={label} className="header__nav-item">
+            {links.map(({ url, label, highlight }) => (
+              <li
+                key={label}
+                className={`header__nav-item ${
+                  highlight ? "header__nav-item--highlight" : ""
+                }`}
+              >
                 <a className="header__nav-link" href={url}>
                   {label}
                 </a>

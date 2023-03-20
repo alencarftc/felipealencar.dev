@@ -1,5 +1,4 @@
 .arrow-button {
-  padding: 20px 20px 20px 0;
   font-size: 3.2rem;
 }
 .landing {
@@ -18,7 +17,17 @@
   transform: translateY(-50%);
   width: 85% !important;
 }
-
+.landing .social {
+  padding-right: 20px;
+}
+.landing__description {
+  font-size: 3.2rem;
+  line-height: 4.6rem;
+  max-width: 70%;
+  margin: 15px 0 30px;
+  color: var(--text-color);
+  font-style: oblique;
+}
 .about__title {
   margin: 12rem 0 12rem;
   color: var(--main-heading-color);
@@ -31,6 +40,7 @@
 }
 .about__inner .arrow-button {
   font-size: 2.4rem;
+  margin-top: 24px;
 }
 .about__text,
 .about__image {
@@ -170,7 +180,7 @@
 .contact__form label {
   font-weight: bold;
   margin: 8px 0;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 24px;
   font-family: "Mulish", sans-serif;
   width: inherit;
@@ -215,7 +225,7 @@ footer p {
   display: inherit;
   color: var(--white);
   padding: 20px !important;
-  background: var(--purple-gray);
+  background: var(--grayish-purple);
   padding: 12px 0;
   font-size: 2rem;
 }
@@ -227,6 +237,10 @@ footer p {
 }
 
 @media screen and (max-height: 768px) {
+  .arrow-button svg {
+    width: 24px;
+    height: 24px;
+  }
   .landing .social {
     display: none;
   }
@@ -234,6 +248,12 @@ footer p {
 @media screen and (max-width: 768px), screen and (max-height: 660px) {
   h2 {
     font-size: 4.2rem !important;
+  }
+  .landing__description {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    max-width: unset;
+    margin: 10px 0 15px;
   }
   .landing__cta.container {
     padding: 0;

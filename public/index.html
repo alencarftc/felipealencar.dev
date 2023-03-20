@@ -116,14 +116,14 @@
     />
     <link
       rel="preload"
-      href="%PUBLIC_URL%/fonts/Mulish-Regular.ttf"
+      href="%PUBLIC_URL%/fonts/Mulish-Italic.ttf"
       as="font"
       type="font/ttf"
       crossorigin
     />
     <link
       rel="preload"
-      href="%PUBLIC_URL%/fonts/Mulish-Bold.ttf"
+      href="%PUBLIC_URL%/fonts/Mulish-Regular.ttf"
       as="font"
       type="font/ttf"
       crossorigin
@@ -140,20 +140,20 @@
 
       @font-face {
         font-family: "Mulish";
+        font-style: oblique;
+        font-weight: 400;
+        font-display: swap;
+        src: local("Mulish Italic"), local("Mulish-Italic"),
+          url("fonts/Mulish-Italic.ttf") format("truetype");
+      }
+
+      @font-face {
+        font-family: "Mulish";
         font-style: normal;
         font-weight: 400;
         font-display: swap;
         src: local("Mulish Regular"), local("Mulish-Regular"),
           url("fonts/Mulish-Regular.ttf") format("truetype");
-      }
-
-      @font-face {
-        font-family: "Mulish";
-        font-style: bold;
-        font-weight: 700;
-        font-display: swap;
-        src: local("Mulish Bold"), local("Mulish-Bold"),
-          url("fonts/Mulish-Bold.ttf") format("truetype");
       }
     </style>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>

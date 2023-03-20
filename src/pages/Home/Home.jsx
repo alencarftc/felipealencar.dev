@@ -40,8 +40,14 @@ const Home = () => {
             <h2 className="title landing__title">
               Desenvolvendo sonhos com tecnologia e precisão
             </h2>
+            <p className="landing__description">
+              Serviços especializados em criação, manutenção e otimização de
+              websites e aplicações para a web.
+            </p>
           </div>
-          <ArrowButton href="#sobre">Quero conhecer mais</ArrowButton>
+          <ArrowButton href="#sobre" contrast>
+            Quero conhecer mais
+          </ArrowButton>
         </div>
         <SocialIcons />
       </section>
@@ -113,7 +119,7 @@ const Home = () => {
             >
               <label htmlFor="name">
                 Nome
-                <input name="name" type="text" placeholder="Nick" required />
+                <input name="name" type="text" placeholder="Antônio" required />
                 <ValidationError
                   prefix="Text"
                   field="text"
@@ -126,7 +132,7 @@ const Home = () => {
                 <input
                   name="email"
                   type="text"
-                  placeholder="nick@email.com"
+                  placeholder="antonio@email.com"
                   required
                 />
                 <ValidationError
