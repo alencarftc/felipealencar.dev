@@ -57,10 +57,11 @@ const Home = () => {
         <div className="about__inner">
           <div className="about__text">
             <p>
-              A <b>Fecasti Tecnologia</b> é uma empresa especializada no
-              desenvolvimento de <b>websites e aplicações web</b> com ênfase nas
-              melhores experiências de navegação, performance e usabilidade,
-              prezando sempre pelo bom uso das tecnologias.
+              Desenvolvedor de Software com mais de 4 anos de experiência
+              especializando-se no desenvolvimento de websites, aplicações para
+              a web e UI design. Além disso, forte histórico trabalhando em
+              projetos complexos projetando, testando, desenvolvendo e
+              entregando software de qualidade.
             </p>
             <ArrowButton href="#projetos">Conhecer projetos</ArrowButton>
           </div>
@@ -109,7 +110,7 @@ const Home = () => {
             <form
               id="contact__form"
               className="contact__form"
-              action="https://formspree.io/f/xgebzgdd"
+              action="https://formspree.io/f/mayzdoeb"
               onSubmit={(values) => {
                 handleSubmit(values);
                 document.querySelector("#contact__form").reset();
@@ -119,7 +120,7 @@ const Home = () => {
             >
               <label htmlFor="name">
                 Nome
-                <input name="name" type="text" placeholder="Antônio" required />
+                <input name="name" type="text" placeholder="José" required />
                 <ValidationError
                   prefix="Text"
                   field="text"
@@ -132,7 +133,7 @@ const Home = () => {
                 <input
                   name="email"
                   type="text"
-                  placeholder="antonio@email.com"
+                  placeholder="jose@email.com"
                   required
                 />
                 <ValidationError
@@ -173,7 +174,7 @@ const Home = () => {
               <label htmlFor="g-recaptcha">
                 <div
                   className="g-recaptcha"
-                  data-sitekey="6Lcb6Q8lAAAAAMsPMcTh9eJEL38IEiu7MxS1mdMz"
+                  data-sitekey="6LehhR0lAAAAAPkK0F3BRdsK3cJZVZHIr81ana3w"
                   required
                 ></div>
               </label>

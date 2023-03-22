@@ -146,6 +146,9 @@ input:-webkit-autofill {
 .g-recaptcha {
   margin: 4px 0 16px;
   width: 100%;
+  overflow: hidden;
+  display: inline-block;
+  max-width: 260px;
 }
 #g-recaptcha-response {
   display: block !important;

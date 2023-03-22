@@ -9,7 +9,6 @@
   align-items: center;
 }
 .header__logo {
-  max-width: 180px;
   width: unset;
 }
 .header__nav,
