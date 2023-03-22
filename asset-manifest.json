@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "./static/css/main.81266708.css",
-    "main.js": "./static/js/main.37c0e612.js",
+    "main.js": "./static/js/main.2f061cf5.js",
     "static/media/felipe.webp": "./static/media/felipe.7ccf3991e3bb68cdc997.webp",
     "static/media/contact__dark.svg": "./static/media/contact__dark.c790f9ecf58dc221df5702c786f3ff4b.svg",
     "static/media/contact__light.svg": "./static/media/contact__light.6ecb93a781c29fc000a7573c63d33e7c.svg",
     "static/media/logo__light.svg": "./static/media/logo__light.08df96f3c122c8a77aeef7835de265f1.svg",
-    "static/media/logo__dark.svg": "./static/media/logo__dark.66455c36b8c99180ee1c9020e36356e1.svg",
+    "static/media/logo__dark.svg": "./static/media/logo__dark.9be20b90272a517f8aa00c5749f030b5.svg",
     "index.html": "./index.html",
     "static/media/color-toggler__dark.svg": "./static/media/color-toggler__dark.700bf01909df5e77ecf238935798c05a.svg",
     "static/media/instagram.svg": "./static/media/instagram.ef98e4cc4e9a51c53f6a946d8f1b3f40.svg",
@@ -17,10 +17,10 @@
     "static/media/arrow.svg": "./static/media/arrow.e929c21323f3834340def7d3675a4e4c.svg",
     "static/media/author_stroke_bg.svg": "./static/media/author_stroke_bg.212b8fe947bf18817c1cd80e7ebe7634.svg",
     "main.81266708.css.map": "./static/css/main.81266708.css.map",
-    "main.37c0e612.js.map": "./static/js/main.37c0e612.js.map"
+    "main.2f061cf5.js.map": "./static/js/main.2f061cf5.js.map"
   },
   "entrypoints": [
     "static/css/main.81266708.css",
-    "static/js/main.37c0e612.js"
+    "static/js/main.2f061cf5.js"
   ]
 }
